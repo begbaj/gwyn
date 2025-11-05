@@ -1,0 +1,8 @@
+Net/ThemeName "Breeze-Dark"
+Net/IconThemeName "Breeze-Dark"
+Gtk/CursorThemeName "Breeze"
+Gtk/DecorationLayout "menu:minimize,maximize,close"
+Xft/Antialias 1
+Xft/Hinting 1
+Xft/HintStyle "hintslight"
+Xft/RGBA "rgb"

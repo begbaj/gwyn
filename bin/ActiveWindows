@@ -1,0 +1,56 @@
+#!/bin/python
+import sys
+import subprocess
+import json
+
+
+def extract_instance_and_id(node, monitor_name, workspace_name):
+    if not node:
+        return []
+    result = []
+    if "client" in node and node["client"]:
+        result.append(
+            {
+                "instanceName": node["client"]["instanceName"],
+                "windowId": node["id"],
+                "monitor": monitor_name,
+                "workspace": workspace_name,
+            }
+        )
+    result.extend(
+        extract_instance_and_id(node.get("firstChild"), monitor_name, workspace_name)
+    )
+    result.extend(
+        extract_instance_and_id(node.get("secondChild"), monitor_name, workspace_name)
+    )
+    return result
+
+
+args = sys.argv[1:]
+resu = subprocess.run(["bspc", "wm", "--dump-state"], capture_output=True, text=True)
+data = json.loads(resu.stdout)
+
+result = []
+for monitor in data["monitors"]:
+    monitor_name = monitor["name"]
+    for desktop in monitor["desktops"]:
+        workspace_name = desktop["name"]
+        if desktop["root"] is not None:
+            result.extend(
+                extract_instance_and_id(desktop["root"], monitor_name, workspace_name)
+            )
+
+rofi_input = "\n".join(
+    f"{item['windowId']} {item['instanceName']} (Monitor: {item['monitor']}, Workspace: {item['workspace']})"
+    for item in result
+)
+
+result = subprocess.run(
+    ["rofi", "-dmenu", "-p", "Select window:", "-i"],  # Example options for rofi
+    input=rofi_input,
+    capture_output=True,
+    text=True,
+)
+
+window_id = result.stdout.split()[0]
+subprocess.run(["bspc", "node", window_id, "--focus"])

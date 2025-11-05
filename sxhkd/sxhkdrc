@@ -1,0 +1,198 @@
+###############
+# category: launchers
+###############
+
+super + shift + alt + l
+	slock
+
+super + Return
+	alacritty
+
+super + p
+  sh "$HOME"/.config/rofi/launchers/type-2/launcher.sh
+
+super + Print
+	flameshot gui
+
+super + e
+	rofimoji
+
+###############
+# category: macros
+###############
+
+# toggle second monitor
+super + shift + alt + m
+  ToggleSecondMonitor
+
+###############
+# category: system
+###############
+
+# name: Reload Keybindings
+# comb: super + escape
+super + Escape
+	pkill -USR1 -x sxhkd; dunstify -u low -i ~/.config/bspwm/src/assets/reload.svg 'sxhkd' 'The configuration file has been reloaded successfully!'
+
+# name: quit/restart bspwm
+# comb: super + ctrl + shift + r
+super + ctrl + shift + r
+	bspc wm -r; pkill -USR1 -x sxhkd;
+
+# name: desktop management like dwm
+# comb: super + 1-9
+# combdesc: switch to desktop
+# comb: super + shift + 1-9
+# combdesc: move focused node to desktop
+super + {_,shift + }{1-9}
+    bspc {desktop -f,node -d} 'pointed:^{1-9}'
+
+###############
+# category: bspwm hotkey
+###############
+
+super + ctrl + shift + Escape
+	bspc quit
+
+# close and kill
+super + {shift +, shift + ctrl +}q
+	bspc node -{c,k}
+
+# alternate between the tiled and monocle layout
+super + m
+	bspc desktop -l next
+
+# send the newest marked node to the newest preselected node
+super + y
+	bspc node newest.marked.local -n newest.!automatic.local
+
+# swap the current node and the biggest window
+super + g
+	bspc node -s biggest.window
+
+# Hide/Unhide Window
+ctrl + alt + h
+	BspHideNode
+
+###############
+# state/flags
+###############
+
+# set the window state
+super + shift + {space,f,t}
+	bspc node focused -t {\~floating,\~fullscreen, tiled}
+
+# set the node flags
+super + shift + {m,x,0,z}
+	bspc node focused -g {marked,locked,sticky,private}
+
+###############
+# focus/swap
+###############
+
+# focus the node in the given direction
+# super + {_,shift + }{h,j,k,k}
+#	bspc node -{f,s} {west,south,north,east}
+
+# focus the node for the given path jump
+super + {p,b,comma,period}
+	bspc node -f @{parent,brother,first,second}
+
+# focus/swap the next/previous window in the current desktop
+super + {_,shift + }{j,k}
+	bspc node {-f,-s} {next,prev}.local.!hidden.window
+
+# switch monitor focus
+super + s
+	bspc monitor {-f} next
+
+super + shift + s
+	bspc node -m next; 	bspc monitor {-f} next
+
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc {node,desktop} -f last
+
+###############
+# preselect
+###############
+
+# preselect the direction
+super + alt + {h,j,k,l}
+	bspc node -p {west,south,north,east}
+
+# preselect the ratio
+super + alt + {1-9}
+	bspc node -o 0.{1-9}
+
+# cancel the preselection for the focused node
+super + alt + space
+	bspc node -p cancel
+
+# cancel the preselection for the focused desktop
+super + ctrl + shift + space
+	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+###############
+# move/resize
+###############
+
+# expand a window by moving one of its side outward
+super + ctrl + {h,j,k,l}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+super + ctrl + shift + {h,j,k,l}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# Show help
+alt + F1
+	OpenApps --KeyHelp
+
+# Theme Selector
+alt + @space
+	RiceSelector
+
+alt + e
+	RiceEditor
+
+#Terminal Selector
+super + alt + t
+	Term --selecterm
+
+# jgmenu
+~button3
+  xqp 0 $(xdo id -N Bspwm -n root) && jgmenu --csv-file=~/.config/bspwm/src/config/jgmenu.txt --config-file=~/.config/bspwm/src/config/jgmenurc
+
+# Scratchpad
+super + alt + o
+	tdrop -a -w 70% -h 35% -y 0 -x 15%  --class scratch alacritty --class=scratch
+
+# Hide/Show Bar (Polybar and/or eww)
+super + alt + {h,u}
+	HideBar {-h,-u}
+
+# Clipboard
+super + alt + c
+	OpenApps --clipboard
+
+# PowerMenu
+super + alt + p
+	OpenApps --powermenu
+
+# Keyboard Layout Applet
+super + alt + k
+	OpenApps --keyboard
+
+# Volume control
+XF86Audio{RaiseVolume,LowerVolume,Mute}
+	Volume{ --inc, --dec, --toggle}
+
+# Music Control
+XF86Audio{Next,Prev,Play,Stop}
+	MediaControl {--next,--previous,--toggle,--stop}
+
+# Search Active windows
+super + shift + w
+  ActiveWindows
+

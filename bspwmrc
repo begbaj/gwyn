@@ -1,0 +1,49 @@
+#!/usr/bin/env bash
+# dependencies
+#   sxhkd         :   mandatory if you using bspwm
+#   rofi          :   rofi-themes are also neccessary https://github.com/adi1090x/rofi
+#   polybar       :   fancy statusbar
+#   picom         :   animations and eye-candy
+#   autowall      :   simple program to get wallpapers from WallHaven
+#   feh           :   set a wallpaper
+#   dunst         :   see notifications
+#   flameshot     :   take screenshots easly
+#   lxsession     :   polkit is necessary for programs requiring root access
+#   pamixer       :   increase, decrease volume with keyboard
+#   slock         :   lock your screen in a lightweight way (source code)
+#   xss-lock      :   autolock screen
+#   xsetroot      :   it is needed
+#
+#   This is just the main entry
+#   explore the rest of the code to automatically understand
+#   how things work. This is how it should be done, and
+#   even this can obviously be done MUCH better.
+
+# utils should be loaded before anything else
+source "$HOME/.config/bspwm/config"
+source "$HOME/.config/bspwm/src/functions.sh"
+
+log "------------------------------------------------"
+log "execution start"
+
+# Set environment variables
+export PATH="$HOME/.config/bspwm/src:$PATH"
+export XDG_CURRENT_DESKTOP='bspwm'
+
+# source "$HOME/.config/bspwm/bin/Theme.sh"
+source "$HOME/.config/bspwm/src/autorun.sh"
+log_debug "autorun.sh executed"
+source "$HOME/.config/bspwm/src/monitor.sh"
+log_debug "monitor.sh executed"
+source "$HOME/.config/bspwm/src/global-bspwm.sh"
+log_debug "global-bspwm.sh executed"
+source "$HOME/.config/bspwm/src/misc.sh"
+log_debug "misc.sh executed"
+source "$HOME/.config/bspwm/rices/${THEME_NAME}/theme.sh"
+log "loaded theme configuration - ${THEME_NAME}"
+
+source "$HOME/.config/bspwm/src/theme-loader.sh"
+
+log "executed theme"
+log "done"
+log "------------------------------------------------"

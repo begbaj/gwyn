@@ -1,0 +1,14 @@
+// Rofi colors for Isabel
+
+* {
+    font: "Terminess Nerd Font Mono Bold 10";
+    background: #1A1B26;
+    bg-alt: #181b21;
+    background-alt: #1A1B26E0;
+    foreground: #BDC7D3;
+    selected: #8677cf;
+    active: #81ae5f;
+    urgent: #e06c75;
+
+    img-background: url("~/.config/bspwm/rices/default/rofi.webp", width);
+}
