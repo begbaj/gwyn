@@ -33,12 +33,16 @@ export XDG_CURRENT_DESKTOP='bspwm'
 # source "$HOME/.config/bspwm/bin/Theme.sh"
 source "$HOME/.config/bspwm/src/autorun.sh"
 log_debug "autorun.sh executed"
+
 source "$HOME/.config/bspwm/src/monitor.sh"
 log_debug "monitor.sh executed"
+
 source "$HOME/.config/bspwm/src/global-bspwm.sh"
 log_debug "global-bspwm.sh executed"
+
 source "$HOME/.config/bspwm/src/misc.sh"
 log_debug "misc.sh executed"
+
 source "$HOME/.config/bspwm/rices/${THEME_NAME}/theme.sh"
 log "loaded theme configuration - ${THEME_NAME}"
 

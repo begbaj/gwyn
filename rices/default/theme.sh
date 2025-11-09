@@ -24,15 +24,17 @@ magentab="#8677cf"
 cyanb="#56b6c2"
 whiteb="#b8bfe5"
 
+ACCENT_COLOR="${red}"
+
 # xsettingsd Gtk theme vars
 gtk_theme="Breeze-Dark"
 gtk_icons="Breeze-Dark"
-gtk_cursor="Breeze"
+gtk_cursor="Bibata-Modern-Ice"
 
 # -- BSPWM - Borders
 B_BORDER_WIDTH="2"
-B_NORMAL_BC="#14171C"
-B_FOCUSED_BC="#5F5569"
+B_NORMAL_BC="${bg}"
+B_FOCUSED_BC="${ACCENT_COLOR}"
 
 B_TOP_PADDING=15
 B_BOTTOM_PADDING=5
@@ -46,8 +48,8 @@ B_PRESEL_FEEDBACK_COLOR=${green}
 P_FADE="true"        # Fade true|false
 P_SHADOWS="true"     # Shadows true|false
 SHADOW_C="#000000"   # Shadow color
-P_CORNER_R="6"       # Corner radius (0 = disabled)
-P_BLUR="false"       # Blur true|false
+P_CORNER_R="10"      # Corner radius (0 = disabled)
+P_BLUR="true"        # Blur true|false
 P_ANIMATIONS="@"     # (@ = enable) (# = disable)
 P_TERM_OPACITY="1.0" # Terminal transparency. Range: 0.1 - 1.0 (1.0 = disabled)
 

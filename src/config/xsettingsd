@@ -1,6 +1,6 @@
 Net/ThemeName "Breeze-Dark"
 Net/IconThemeName "Breeze-Dark"
-Gtk/CursorThemeName "Breeze"
+Gtk/CursorThemeName "Bibata-Modern-Ice"
 Gtk/DecorationLayout "menu:minimize,maximize,close"
 Xft/Antialias 1
 Xft/Hinting 1
