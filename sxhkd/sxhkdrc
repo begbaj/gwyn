@@ -8,8 +8,9 @@ super + shift + alt + l
 super + Return
 	alacritty
 
+  # sh "$HOME"/.config/rofi/launchers/type-2/launcher.sh
 super + p
-  sh "$HOME"/.config/rofi/launchers/type-2/launcher.sh
+  rofi -show drun -theme "$HOME"/.config/bspwm/src/rofi-themes/Launcher.rasi
 
 super + Print
 	flameshot gui

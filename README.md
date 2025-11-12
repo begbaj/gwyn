@@ -1,38 +1,78 @@
-# BSPWM Easy Template
+# BSPWM Easy Template (BET)
 
-A big thanks goes to [gh0stzk](https://github.com/gh0stzk/dotfiles) work for giving me a starting point with his excellent work.
+A lightweight and modular BSPWM setup inspired by the excellent work of [gh0stzk](https://github.com/gh0stzk/dotfiles).  
+This project is intended for those who prefer a simpler, minimal configuration and modular structure.
 
-This repo is although for all the people who, like me, want something simpler and minimal.
+---
 
-# Dependencies
+## Dependencies
 
-## Required
+### Required
 
 - sxhkd
 - rofi
-- polybar
-- slock
-- xsetroot
-- dunst
-- lxsession
+- polybar  
+- slock  
+- xsetroot  
+- dunst  
+- lxsession  
 
-## Optionally recommended
+### Optional (Recommended)
 
-- picom
-- [autowall](https://github.com/begbaj/autowall)
-- feh
-- flameshot
-- pamixer
-- xss-lock
+- picom  
+- [autowall](https://github.com/begbaj/autowall)  
+- feh  
+- flameshot  
+- pamixer  
+- xss-lock  
+
+---
+
+## Structure
+
+**Note:** This structure is not yet implemented.
+
+The BSPWM configuration folder will follow this layout:
+
+```txt
+BSPWM/
+  ├── bin/
+  │   ├── loader.sh                  # Theme loader
+  │   └── loadlogic/                 # Logic modules defining how components are applied
+  │       └── <function-component>.sh
+  │
+  ├── globals/                       # Shared configurations (fonts, colors, constants)
+  │   └── <component-global>.sh
+  │
+  ├── themes/                        # Individual theme definitions
+  │   ├── .build/                    # Builded configurations currently used by current theme
+  │   └── <theme-name>/
+  │       ├── config.sh              # Core theme configuration (colors, wallpaper, etc.)
+  │       ├── dunst/                 # Component-specific configs
+  │       ├── polybar/
+  │       └── rofi/
+  │
+  └── bspwmrc                        # Main BSPWM configuration entry point
+```
+
+### Example theme structure
+
+```txt
+default/
+  ├── config.sh
+  ├── dunst/
+  ├── polybar/
+  └── rofi/
+```
 
 # Notice
 
-Commits will many times be totally uninformative at this stage because sometimes I'm in a rush and, you know, don't care about good commits :)
+Commit messages may sometimes be uninformative. Development moves quickly, and detailed commit messages are not always the focus at this stage.
 
-# Todo
+---
 
-A LOT OF THINGS.
+### Todo
 
-ALL OF THIS IS STILL A WORK IN PROGRESS.
-
-This code obviously needs a lot of refactoring.
+- [ ] Refactor and clean up existing code  
+- [ ] Implement full modular structure  
+- [ ] General improvements and optimizations

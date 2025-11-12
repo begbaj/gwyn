@@ -1,12 +1,24 @@
-[19:03:31][INFO] ------------------------------------------------
-[19:03:31][INFO] execution start
-[19:03:31][DEBUG] autorun.sh executed
-[19:03:31][DEBUG] monitor.sh executed
-[19:03:31][DEBUG] global-bspwm.sh executed
-[19:03:31][DEBUG] misc.sh executed
-[19:03:31][INFO] loaded theme configuration - default
-[19:03:32][INFO] theme-loader executing functions
-[19:03:32][INFO] theme-loader functions executed
-[19:03:32][INFO] executed theme
-[19:03:32][INFO] done
-[19:03:32][INFO] ------------------------------------------------
+[19:32:32][INFO] ------------------------------------------------
+[19:32:32][INFO] execution start
+[19:32:32][DEBUG] autorun.sh executed
+[19:32:32][DEBUG] monitor.sh executed
+[19:32:32][DEBUG] global-bspwm.sh executed
+[19:32:32][DEBUG] misc.sh executed
+[19:32:32][INFO] loaded theme configuration - default
+[19:32:32][INFO] theme-loader executing functions
+[19:32:33][INFO] theme-loader functions executed
+[19:32:33][INFO] executed theme
+[19:32:33][INFO] done
+[19:32:33][INFO] ------------------------------------------------
+[19:39:22][INFO] ------------------------------------------------
+[19:39:22][INFO] execution start
+[19:39:22][DEBUG] autorun.sh executed
+[19:39:22][DEBUG] monitor.sh executed
+[19:39:22][DEBUG] global-bspwm.sh executed
+[19:39:22][DEBUG] misc.sh executed
+[19:39:22][INFO] loaded theme configuration - default
+[19:39:23][INFO] theme-loader executing functions
+[19:39:23][INFO] theme-loader functions executed
+[19:39:23][INFO] executed theme
+[19:39:23][INFO] done
+[19:39:23][INFO] ------------------------------------------------
