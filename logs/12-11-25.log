@@ -1,0 +1,12 @@
+[19:03:31][INFO] ------------------------------------------------
+[19:03:31][INFO] execution start
+[19:03:31][DEBUG] autorun.sh executed
+[19:03:31][DEBUG] monitor.sh executed
+[19:03:31][DEBUG] global-bspwm.sh executed
+[19:03:31][DEBUG] misc.sh executed
+[19:03:31][INFO] loaded theme configuration - default
+[19:03:32][INFO] theme-loader executing functions
+[19:03:32][INFO] theme-loader functions executed
+[19:03:32][INFO] executed theme
+[19:03:32][INFO] done
+[19:03:32][INFO] ------------------------------------------------

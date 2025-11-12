@@ -2,7 +2,7 @@
 # "$HOME"/.config/bspwm/src/SetSysVars
 #
 source "$HOME/.config/bspwm/src/functions.sh"
-run sxhkd -c "$HOME/.config/bspwm/src/config/sxhkdrc"
+run sxhkd -c "$HOME/.config/bspwm/sxhkd/sxhkdrc"
 run picom --config "$HOME/.config/bspwm/src/config/picom.conf" -b
 run "$HOME/.local/bin/autowall" -a
 # run dunst

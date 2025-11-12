@@ -14,16 +14,9 @@ super + p
 super + Print
 	flameshot gui
 
-super + e
-	rofimoji
-
 ###############
 # category: macros
 ###############
-
-# toggle second monitor
-super + shift + alt + m
-  ToggleSecondMonitor
 
 ###############
 # category: system
@@ -94,10 +87,6 @@ super + shift + {m,x,0,z}
 # super + {_,shift + }{h,j,k,k}
 #	bspc node -{f,s} {west,south,north,east}
 
-# focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
-
 # focus/swap the next/previous window in the current desktop
 super + {_,shift + }{j,k}
 	bspc node {-f,-s} {next,prev}.local.!hidden.window
@@ -117,21 +106,21 @@ super + {grave,Tab}
 # preselect
 ###############
 
-# preselect the direction
-super + alt + {h,j,k,l}
-	bspc node -p {west,south,north,east}
-
-# preselect the ratio
-super + alt + {1-9}
-	bspc node -o 0.{1-9}
-
-# cancel the preselection for the focused node
-super + alt + space
-	bspc node -p cancel
-
-# cancel the preselection for the focused desktop
-super + ctrl + shift + space
-	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+# # preselect the direction
+# super + alt + {h,j,k,l}
+# 	bspc node -p {west,south,north,east}
+#
+# # preselect the ratio
+# super + alt + {1-9}
+# 	bspc node -o 0.{1-9}
+#
+# # cancel the preselection for the focused node
+# super + alt + space
+# 	bspc node -p cancel
+#
+# # cancel the preselection for the focused desktop
+# super + ctrl + shift + space
+# 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
 ###############
 # move/resize
@@ -145,28 +134,28 @@ super + ctrl + {h,j,k,l}
 super + ctrl + shift + {h,j,k,l}
 	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
 
-# Show help
-alt + F1
-	OpenApps --KeyHelp
+# # Show help
+# alt + F1
+# 	OpenApps --KeyHelp
+#
+# # Theme Selector
+# alt + @space
+# 	RiceSelector
+#
+# alt + e
+# 	RiceEditor
 
-# Theme Selector
-alt + @space
-	RiceSelector
-
-alt + e
-	RiceEditor
-
-#Terminal Selector
-super + alt + t
-	Term --selecterm
+# #Terminal Selector
+# super + alt + t
+# 	Term --selecterm
 
 # jgmenu
-~button3
-  xqp 0 $(xdo id -N Bspwm -n root) && jgmenu --csv-file=~/.config/bspwm/src/config/jgmenu.txt --config-file=~/.config/bspwm/src/config/jgmenurc
+# ~button3
+#   xqp 0 $(xdo id -N Bspwm -n root) && jgmenu --csv-file=~/.config/bspwm/src/config/jgmenu.txt --config-file=~/.config/bspwm/src/config/jgmenurc
 
 # Scratchpad
 super + alt + o
-	tdrop -a -w 70% -h 35% -y 0 -x 15%  --class scratch alacritty --class=scratch
+	tdrop -ma -w 70% -h 35% -y 0 -x 15% --class scratch alacritty --class=scratch
 
 # Hide/Show Bar (Polybar and/or eww)
 super + alt + {h,u}
@@ -186,11 +175,11 @@ super + alt + k
 
 # Volume control
 XF86Audio{RaiseVolume,LowerVolume,Mute}
-	Volume{ --inc, --dec, --toggle}
+	sh "$HOME"/.config/bspwm/bin/Volume { --inc, --dec, --toggle}
 
 # Music Control
 XF86Audio{Next,Prev,Play,Stop}
-	MediaControl {--next,--previous,--toggle,--stop}
+	sh "$HOME"/.config/bspwm/bin/MediaControl {--next,--previous,--toggle,--stop}
 
 # Search Active windows
 super + shift + w

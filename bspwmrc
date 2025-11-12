@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-# dependencies
-#   sxhkd         :   mandatory if you using bspwm
+# dependencies sxhkd         :   mandatory if you using bspwm
 #   rofi          :   rofi-themes are also neccessary https://github.com/adi1090x/rofi
 #   polybar       :   fancy statusbar
 #   picom         :   animations and eye-candy
@@ -20,6 +19,7 @@
 #   even this can obviously be done MUCH better.
 
 # utils should be loaded before anything else
+
 source "$HOME/.config/bspwm/config"
 source "$HOME/.config/bspwm/src/functions.sh"
 
