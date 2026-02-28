@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # Path to your custom theme or “rice” configuration directory
-export THEME_NAME="default"
+export THEME_NAME="islands"
 export BSPWM_LOG="$HOME/.config/bspwm/logs/$(date +%d-%m-%y).log"
 
 ## ───── GLOBAL BSPC CONFIGURATION ─────
 # Pixel gap between adjacent windows
-export BSPC_WINDOW_GAP=5
+export BSPC_WINDOW_GAP=15
 # Width of the window border in pixels
 export BSPC_BORDER_WIDTH=0
 # Ratio (0–1) for automatic window split size (e.g., 0.51 = 51% / 49%)

@@ -31,8 +31,8 @@ foreground = "${fg}"
 
 # Cursor colors
 [colors.cursor]
-cursor = "${magentab}"
-text = "${bg}"
+cursor = "${magenta}"
+text = "${white}"
 
 # Normal colors
 [colors.normal]
@@ -47,14 +47,14 @@ white = "${white}"
 
 # Bright colors
 [colors.bright]
-black = "${blackb}"
-red = "${redb}"
-green = "${greenb}"
-yellow = "${yellowb}"
-blue = "${blueb}"
-magenta = "${magentab}"
-cyan = "${cyanb}"
-white = "${whiteb}"
+black = "${black}"
+red = "${red}"
+green = "${green}"
+yellow = "${yellow}"
+blue = "${blue}"
+magenta = "${magenta}"
+cyan = "${cyan}"
+white = "${white}"
 EOF
 
 }
@@ -127,14 +127,9 @@ EOF
 
 }
 
-# Terminal colors
-set_term_config() {
-  # let user decide if and which emulators should be affected
-  echo "not implemented"
-}
-
 # Set compositor configuration
 set_picom_config() {
+
   picom_conf_file="$HOME/.config/bspwm/src/config/picom.conf"
   picom_rules_file="$HOME/.config/bspwm/src/config/picom-rules.conf"
 
@@ -147,7 +142,7 @@ set_picom_config() {
   sed -i "$picom_rules_file" \
     -e "95s/	opacity = .*/	opacity = 1;/"
 
-  if [[ "$ANIMATIONS" = "true" ]]; then
+  if [[ "$P_ANIMATIONS" = "@" ]]; then
     sed -i "$picom_rules_file" \
       -e '/picom-animations/c\@include "picom-animations.conf"'
   else
@@ -158,7 +153,7 @@ set_picom_config() {
 
 # Set dunst config
 set_dunst_config() {
-  dunst_config_file="$HOME/.config/bspwm/src/config/dunstrc"
+  dunst_config_file="$HOME/.config/bspwm/rices/$THEME_NAME/dunst/dunstrc"
 
   sed -i "$dunst_config_file" \
     -e "s/transparency = .*/transparency = 0/g" \
@@ -185,23 +180,6 @@ set_dunst_config() {
 		background = "${bg}"
 		foreground = "${red}"
 	_EOF_
-}
-
-# Set eww colors
-set_eww_colors() {
-  cat >"$HOME"/.config/bspwm/eww/colors.scss <<EOF
-\$bg: ${bg};
-\$bg-alt: ${black};
-\$fg: ${fg};
-\$black: ${blackb};
-\$red: ${red};
-\$green: ${green};
-\$yellow: ${yellow};
-\$blue: ${blue};
-\$magenta: ${magenta};
-\$cyan: ${cyan};
-\$archicon: #0f94d2;
-EOF
 }
 
 set_launchers() {
@@ -265,12 +243,16 @@ set_geany() {
 # Launch theme
 launch_theme() {
   # Launch dunst notification daemon
-  dunst -config "${HOME}"/.config/bspwm/src/config/dunstrc &
+  dunst -config "${HOME}"/.config/bspwm/rices/"${THEME_NAME}"/dunst/dunstrc &
 
-  # Launch polybar
   sleep 0.1
+  RICE_DIR="${HOME}/.config/bspwm/rices/${RICE}"
   for mon in $(polybar --list-monitors | cut -d":" -f1); do
-    MONITOR=$mon polybar -q isa-bar -c "${HOME}"/.config/bspwm/rices/"${RICE}"/config.ini &
+    while IFS= read -r bar_name || [[ -n "$bar_name" ]]; do
+      if [[ -n "$bar_name" ]]; then
+        MONITOR=$mon polybar -q "$bar_name" -c "${RICE_DIR}/config.ini" &
+      fi
+    done <"${RICE_DIR}/bars.txt"
   done
 }
 
@@ -281,13 +263,11 @@ set_bspwm_rules() {
 ### Apply Configurations
 log "theme-loader executing functions"
 set_bspwm_config
-# set_term_config
+set_alacritty
 set_picom_config
 set_dunst_config
-# set_eww_colors
 # set_launchers
 set_appearance
-# set_geany
 set_bspwm_rules
 launch_theme
 log "theme-loader functions executed"

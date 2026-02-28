@@ -21,7 +21,7 @@ function run_polkit() {
     fi
   done
 
-  run $1
+  run "$1"
 }
 
 function _log() {

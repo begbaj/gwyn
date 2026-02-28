@@ -20,7 +20,7 @@ transparency = 0
 
 gap_size = 3
 separator_height = 1
-separator_color = "#f2f4f8"
+separator_color = "#ffffff"
 
 padding = 8
 horizontal_padding = 10
@@ -36,7 +36,7 @@ font = Inconsolata Semi Condensed Bold 9
 line_height = 0
 
 markup = full
-format = "<span size='xx-large' font_desc='Cantarell 9' weight='bold' foreground='#7560d3'>%s</span>\n%b"
+format = "<span size='xx-large' font_desc='Cantarell 9' weight='bold' foreground='#ee5396'>%s</span>\n%b"
 alignment = center
 vertical_alignment = center
 
@@ -84,7 +84,7 @@ class = Dunst
 [urgency_low]
 timeout = 3
 background = "#1A1B26"
-foreground = "#81ae5f"
+foreground = "#42be65"
 
 [urgency_normal]
 timeout = 5
@@ -94,4 +94,4 @@ foreground = "#BDC7D3"
 [urgency_critical]
 timeout = 0
 background = "#1A1B26"
-foreground = "#ff1477"
+foreground = "#FF2233"

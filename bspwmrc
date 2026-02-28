@@ -12,6 +12,7 @@
 #   slock         :   lock your screen in a lightweight way (source code)
 #   xss-lock      :   autolock screen
 #   xsetroot      :   it is needed
+#   wmname        :   this solves problems with Java GUI applications not displaying correctly
 #
 #   This is just the main entry
 #   explore the rest of the code to automatically understand
@@ -45,6 +46,9 @@ log_debug "misc.sh executed"
 
 source "$HOME/.config/bspwm/rices/${THEME_NAME}/theme.sh"
 log "loaded theme configuration - ${THEME_NAME}"
+
+source "$HOME/.config/bspwm/src/libinput.sh"
+log_debug "libinput.sh executed"
 
 source "$HOME/.config/bspwm/src/theme-loader.sh"
 

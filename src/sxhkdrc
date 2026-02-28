@@ -2,7 +2,7 @@
 # category: launchers
 ###############
 
-super + shift + alt + l
+super + l
 	slock
 
 super + Return
@@ -65,8 +65,8 @@ super + g
 	bspc node -s biggest.window
 
 # Hide/Unhide Window
-ctrl + alt + h
-	BspHideNode
+# ctrl + alt + h
+# 	BspHideNode
 
 ###############
 # state/flags
@@ -94,10 +94,22 @@ super + {_,shift + }{j,k}
 
 # switch monitor focus
 super + s
-	bspc monitor {-f} next
+	bspc monitor {-f} last
 
 super + shift + s
-	bspc node -m next; 	bspc monitor {-f} next
+	bspc node -m last; 	bspc monitor {-f} last
+
+super + d
+	bspc monitor {-f} east
+
+super + shift + d
+	bspc node -m east; 	bspc monitor {-f} east
+
+super + a
+	bspc monitor {-f} west
+
+super + shift + a
+	bspc node -m west; 	bspc monitor {-f} west
 
 # focus the last node/desktop
 super + {grave,Tab}
@@ -173,6 +185,13 @@ super + alt + p
 # Keyboard Layout Applet
 super + alt + k
 	OpenApps --keyboard
+
+# Brightness control
+XF86MonBrightnessUp
+  brightnessctl set +10%
+
+XF86MonBrightnessDown
+  brightnessctl set 10%-
 
 # Volume control
 XF86Audio{RaiseVolume,LowerVolume,Mute}
