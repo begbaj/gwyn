@@ -1,7 +1,6 @@
-function run() {
-  if ! pidof -q "$1"; then
-    "$@" &
-  fi
+run() {
+  killall "$1"
+  "$@" &
 }
 
 function run_polkit() {
@@ -20,6 +19,7 @@ function run_polkit() {
       kill "$pid"
     fi
   done
+  killall "$1"
 
   run "$1"
 }

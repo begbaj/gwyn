@@ -1,14 +1,12 @@
-// # z0mbi3 - https://github.com/gh0stzk/dotfiles
-
+// Credits: Began Bajrami (begbaj)
 
 configuration {
 	modi: 						          "drun";
-	icon-theme: 				        "Papirus-Dark";
 	application-fallback-icon: 	"Adwaita";
     show-icons:                 true;
 	drun-display-format:        "{name}";
 	disable-history:            true;
-	sidebar-mode: 				false;
+	sidebar-mode: 				true;
 	
 	hover-select:				true;
 	me-select-entry:			"";
@@ -20,21 +18,20 @@ configuration {
 
 
 window {
+    background-color:            transparent;
     transparency:                "real";
     location:                    center;
     anchor:                      center;
     fullscreen:                  false;
-    width:                       550px;
+    width:                       450px;
     x-offset:                    0px;
-    y-offset:                    0px;
+    y-offset:                    -15;
 
     /* properties for all widgets */
     enabled:                     true;
-    border-radius:               6px;
+    border-radius:               10px;
     cursor:                      "default";
-    background-color:            @background;
 }
-
 
 mainbox {
     enabled:                     true;
@@ -46,8 +43,10 @@ mainbox {
 
 listbox {
     spacing:                     10px;
-    padding:                     15px 15px;
-    background-color:            transparent;
+    padding:                     0;
+    margin:                      10 0 0 22;
+    border-radius:               10px;
+    background-color:            @bg-alt;
     orientation:                 vertical;
     children:                    [ "listview" ];
 }
@@ -55,11 +54,11 @@ listbox {
 
 inputbar {
     enabled:                     true;
-    spacing:                     10px;
-    padding:                     50px 100px;
-    background-color:            transparent;
-    background-image:            var(img-background);
+    spacing:                     0px;
+    margin:                      0;
+    background-color:            @bg-alt;
     text-color:                  @foreground;
+    border-radius:               10;
     orientation:                 horizontal;
     children:                    [ "textbox-prompt-colon", "entry" ];
 }
@@ -67,11 +66,10 @@ inputbar {
 textbox-prompt-colon {
     enabled:                     true;
     expand:                      false;
-    font:                        "JetBrainsMono NF Bold 9";
-    str:                         "";
-    padding:                     12px 19px 0 15px;
-    border-radius:               8px;
-    background-color:            @background-alt;
+    font:                        "JetBrainsMono NF Bold 12";
+    str:                         "";
+    padding:                     10;
+    background-color:            transparent;
     text-color:                  inherit;
 }
 
@@ -80,7 +78,7 @@ entry {
     expand:                      true;
     padding:                     12px 12px;
     border-radius:               8px;
-    background-color:            @background-alt;
+    background-color:            transparent;
     text-color:                  inherit;
     cursor:                      text;
     placeholder:                 "Search";
@@ -89,8 +87,8 @@ entry {
 
 listview {
     enabled:                     true;
-    columns:                     3;
-    lines:						 5;
+    columns:                     1;
+    lines:                       3;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
@@ -99,8 +97,9 @@ listview {
     fixed-height:                true;
     fixed-columns:               true;
     
-    spacing:                     3px;
     background-color:            transparent;
+    spacing:                     3px;
+    padding:                     10 10;
     text-color:                  @foreground;
     cursor:                      "default";
 }

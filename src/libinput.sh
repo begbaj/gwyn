@@ -1,6 +1,6 @@
 # touchpad
 # touchpad id - get it via xinput list
-tid=9
+tid=$(xinput | grep Touchpad | awk -F'=' '{print $2}' | awk '{print $1}')
 
 #tap-to-click
 xinput set-prop $tid "libinput Tapping Enabled" 1

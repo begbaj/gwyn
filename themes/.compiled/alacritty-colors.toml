@@ -1,0 +1,31 @@
+# Default colors
+[colors.primary]
+background = "#161616"
+foreground = "#F2F4F8"
+
+# Cursor colors
+[colors.cursor]
+cursor = "#FF2233"
+text = "#F2F4F8"
+
+# Normal colors
+[colors.normal]
+black = "#161616"
+red = "#FF2233"
+green = "#42BE65"
+yellow = "#F1C21B"
+blue = "#7ACCFF"
+magenta = "#EE5396"
+cyan = "#3DDBD9"
+white = "#F2F4F8"
+
+# Bright colors
+[colors.bright]
+black = "#262626"
+red = "#FF6975"
+green = "#77D090"
+yellow = "#F5D45E"
+blue = "#7ACCFF"
+magenta = "#F494BE"
+cyan = "#79E6E5"
+white = "#FFFFFF"

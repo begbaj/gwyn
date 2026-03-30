@@ -1,4 +1,4 @@
-# BSPWM Easy Template (BET)
+# Gwyn - an easy to use bspwm template
 
 A lightweight and modular BSPWM setup inspired by the excellent work of [gh0stzk](https://github.com/gh0stzk/dotfiles).  
 This project is intended for those who prefer a simpler, minimal configuration and modular structure.
@@ -58,11 +58,13 @@ BSPWM/
 ### Example theme structure
 
 ```txt
-default/
+islands/
   ├── config.sh
   ├── dunst/
   ├── polybar/
+  ├── bspwm/
   └── rofi/
+
 ```
 
 # Notice

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# dependencies sxhkd         :   mandatory if you using bspwm
+# dependencies
+#   sxhkd         :   mandatory for bspwm
 #   rofi          :   rofi-themes are also neccessary https://github.com/adi1090x/rofi
 #   polybar       :   fancy statusbar
 #   picom         :   animations and eye-candy
@@ -21,37 +22,27 @@
 
 # utils should be loaded before anything else
 
+shopt -s globstar
 source "$HOME/.config/bspwm/config"
-source "$HOME/.config/bspwm/src/functions.sh"
-
-log "------------------------------------------------"
-log "execution start"
+source "$BASE_DIR/src/functions.sh"
 
 # Set environment variables
-export PATH="$HOME/.config/bspwm/src:$PATH"
+export PATH="$BASE_DIR/src:$PATH"
 export XDG_CURRENT_DESKTOP='bspwm'
 
+# DO NOT REMOVE ---------------------------------------------------
+run sxhkd -c "$GLOBALS_DIR/sxhkd/sxhkdrc"
+# -----------------------------------------------------------------
+# I put this here because if anything fails, at least this is ok and
+# you can safely logout, run a terminal, open a browser, or whatever
+
 # source "$HOME/.config/bspwm/bin/Theme.sh"
-source "$HOME/.config/bspwm/src/autorun.sh"
-log_debug "autorun.sh executed"
-
-source "$HOME/.config/bspwm/src/monitor.sh"
-log_debug "monitor.sh executed"
-
-source "$HOME/.config/bspwm/src/global-bspwm.sh"
-log_debug "global-bspwm.sh executed"
-
-source "$HOME/.config/bspwm/src/misc.sh"
-log_debug "misc.sh executed"
-
-source "$HOME/.config/bspwm/rices/${THEME_NAME}/theme.sh"
-log "loaded theme configuration - ${THEME_NAME}"
-
-source "$HOME/.config/bspwm/src/libinput.sh"
-log_debug "libinput.sh executed"
-
-source "$HOME/.config/bspwm/src/theme-loader.sh"
-
-log "executed theme"
-log "done"
-log "------------------------------------------------"
+source "$SRC_DIR/autorun.sh"
+source "$SRC_DIR/monitor.sh"
+source "$SRC_DIR/global-bspwm.sh"
+source "$SRC_DIR/misc.sh"
+source "$THEME_DIR/config.sh"
+source "$SRC_DIR/libinput.sh"
+source "$BIN_DIR/loader.sh"
+shopt -u globstar
+dunstify -a "Gwyn" "Gwyn" "Theme ${THEME_NAME} successfully loaded"

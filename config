@@ -1,39 +1,48 @@
 #!/bin/bash
 
-# Path to your custom theme or “rice” configuration directory
 export THEME_NAME="islands"
-export BSPWM_LOG="$HOME/.config/bspwm/logs/$(date +%d-%m-%y).log"
+
+# Path to your custom theme or “rice” configuration directory
+BASE_DIR=$HOME/.config/bspwm
+SRC_DIR=$BASE_DIR/src
+THEME_DIR=$BASE_DIR/themes/$THEME_NAME
+COMPILE_DIR=$BASE_DIR/themes/.compiled
+GLOBALS_DIR=$BASE_DIR/globals
+BIN_DIR=$BASE_DIR/bin
+COMPILERS=$BIN_DIR/compile_logic
+
+BSPWM_LOG="$BASE_DIR/logs/$(date +%d-%m-%y).log"
 
 ## ───── GLOBAL BSPC CONFIGURATION ─────
 # Pixel gap between adjacent windows
-export BSPC_WINDOW_GAP=15
+BSPC_WINDOW_GAP=15
 # Width of the window border in pixels
-export BSPC_BORDER_WIDTH=0
+BSPC_BORDER_WIDTH=0
 # Ratio (0–1) for automatic window split size (e.g., 0.51 = 51% / 49%)
-export BSPC_SPLIT_RATIO=0.51
+BSPC_SPLIT_RATIO=0.51
 # If true, single window automatically goes fullscreen in monocle mode
-export BSPC_SINGLE_MONOCLE=true
+BSPC_SINGLE_MONOCLE=true
 # If true, disables window borders in monocle (fullscreen) mode
-export BSPC_BORDERLESS_MONOCLE=true
+BSPC_BORDERLESS_MONOCLE=true
 # If true, disables gaps between windows in monocle mode
-export BSPC_GAPLESS_MONOCLE=false
+BSPC_GAPLESS_MONOCLE=false
 # If true, focus changes when the mouse pointer enters a window
-export BSPC_FOCUS_FOLLOWS_POINTER=true
+BSPC_FOCUS_FOLLOWS_POINTER=true
 # If true, moves the mouse pointer when window focus changes
-export BSPC_POINTER_FOLLOWS_FOCUS=false
+BSPC_POINTER_FOLLOWS_FOCUS=false
 # If true, moves the pointer when switching monitors
-export BSPC_POINTER_FOLLOWS_MONITOR=true
+BSPC_POINTER_FOLLOWS_MONITOR=true
 # Time interval (ms) between pointer motion updates for focus following
-export BSPC_POINTER_MOTION_INTERVAL=5
+BSPC_POINTER_MOTION_INTERVAL=5
 # Modifier key used for pointer actions (mod1 = Alt, mod4 = Super)
-export BSPC_POINTER_MODIFIER=mod4
+BSPC_POINTER_MODIFIER=mod4
 # Mouse action when pressing button 1 with modifier (move window)
-export BSPC_POINTER_ACTION1=move
+BSPC_POINTER_ACTION1=move
 # Mouse action when pressing button 2 with modifier (resize by edge)
-export BSPC_POINTER_ACTION2=resize_side
+BSPC_POINTER_ACTION2=resize_side
 # Mouse action when pressing button 3 with modifier (resize by corner)
-export BSPC_POINTER_ACTION3=resize_corner
+BSPC_POINTER_ACTION3=resize_corner
 
 ## ───── MONITOR SETTINGS ─────
 # Names or numbers of workspaces (desktops) for each monitor
-export MONITOR_WORKSPACE_NAMES=("1" "2" "3" "4" "5" "6" "7" "8" "9")
+MONITOR_WORKSPACE_NAMES=("1" "2" "3" "4" "5" "6" "7" "8" "9")
