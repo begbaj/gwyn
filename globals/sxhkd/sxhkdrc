@@ -9,7 +9,7 @@ super + Return
 	alacritty
 
 super + p
-  rofi -show drun -theme "$HOME"/.config/bspwm/src/rofi-themes/Launcher.rasi
+  rofi -show drun -theme "$HOME"/.config/bspwm/themes/.compiled/applauncher.rasi
 
 super + Print
 	flameshot gui

@@ -1,4 +1,8 @@
+# Copy global picom fragments, then override with theme-specific ones if present
 cp $GLOBALS_DIR/picom/picom-* $COMPILE_DIR
+if [[ -d "$THEME_DIR/picom" ]]; then
+  cp $THEME_DIR/picom/picom-* $COMPILE_DIR 2>/dev/null
+fi
 
 cat <<EOF >"$P_CONF"
 #################################

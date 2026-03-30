@@ -183,10 +183,10 @@ dunst_open_direction="right"
 #################################
 # ROFI
 #################################
-rofi_font="JetBrainsMono NF Bold 9"
+rofi_font="JetBrainsMono NF Bold 12"
 rofi_background="$bg"
-rofi_bg_alt="$black"
-rofi_background_alt="${bg}E0"
+rofi_bg_alt="${bg}AA"
+rofi_background_alt="${bg}00"
 rofi_fg="$fg"
 rofi_selected="$cyan"
 rofi_active="$green"

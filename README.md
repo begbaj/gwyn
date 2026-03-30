@@ -75,6 +75,6 @@ Commit messages may sometimes be uninformative. Development moves quickly, and d
 
 ### Todo
 
-- [ ] Refactor and clean up existing code  
-- [ ] Implement full modular structure  
-- [ ] General improvements and optimizations
+- [X] Refactor and clean up existing code  
+- [-] Implement full modular structure  
+- [-] General improvements and optimizations
