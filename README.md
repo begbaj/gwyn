@@ -3,6 +3,9 @@
 A lightweight and modular BSPWM setup inspired by the excellent work of [gh0stzk](https://github.com/gh0stzk/dotfiles).  
 This project is intended for those who prefer a simpler, minimal configuration and modular structure.
 
+## BEFORE YOU COMPLAIN
+
+This is something i'm sharing because I like to share what I do, but is also a totally personal project, which means that there is no insane testing on this code and there may be several bugs or not-so-clean code. I don't dedicate much time to this project so it may never be completed. If you have any suggestion or want to contribute, you're welcome to share!
 ---
 
 ## Dependencies
