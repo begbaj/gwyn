@@ -11,24 +11,42 @@ This is something i'm sharing because I like to share what I do, but is also a t
 
 ## Dependencies
 
-### Required
+## Required
 
-- sxhkd
-- rofi
-- polybar  
-- slock  
-- xsetroot  
-- dunst  
-- lxsession  
+ sxhkd
+ rofi
+ polybar  
+ slock  
+ xsetroot  
+ dunst  
+ lxsession  
+ picom  
+ [autowall](https://github.com/begbaj/autowall)  
+ feh  
+ flameshot  
+ pamixer  
+ xss-lock  
 
-### Optional (Recommended)
+> Note: some of this are acyually not strictly required since it is easy to remove the dependency by configuring the environment to not to use some of the tools. I've put them as required since I did not already prepare a "minimal" setup where only a few packages are actually required (like sxhkd, which you already have, polybar, rofi, picom etc.)
 
-- picom  
-- [autowall](https://github.com/begbaj/autowall)  
-- feh  
-- flameshot  
-- pamixer  
-- xss-lock  
+# Installation
+
+Install required packages. On Arch-based distros, it should be enough to run this:
+
+```bash
+sudo pacman -S sxhkd rofi polybar picom autowall feh dunst flameshot lxsession pamixer slock xss-lock xsetroot wmname
+```
+
+Then, just run this:
+
+```bash
+cd .config/
+mv bspwm/ bspwm.bak/ # only if you already have a bspwm configuration
+git clone https://github.com/begbaj/gwyn.git
+mv gwyn/ bspwm/
+```
+
+and then run bspwm.
 
 ---
 
