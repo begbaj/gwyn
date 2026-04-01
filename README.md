@@ -1,4 +1,4 @@
-# Gwyn - an easy to use bspwm template
+# Gwyn - an easy to configure, minimal bspwm template
 
 A lightweight and modular BSPWM setup inspired by the excellent work of [gh0stzk](https://github.com/gh0stzk/dotfiles).  
 This project is intended for those who prefer a simpler, minimal configuration and modular structure.
