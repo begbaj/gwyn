@@ -67,6 +67,7 @@ transparent-clipping = ${P_TRANSPARENT_CLIPPING:-false};
 #     Rules & Animations        #
 #################################
 rules: (
+@include "picom-shaders.conf"
 @include "picom-rules.conf"
 ${P_ANIMATIONS}include "picom-animations.conf"
 )

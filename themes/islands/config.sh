@@ -112,78 +112,13 @@ B_BOTTOM_PADDING=5
 B_LEFT_PADDING=5
 B_RIGHT_PADDING=5
 
-B_URGENT_BORDER_COLOR=${redb}
+B_URGENT_BORDER_COLOR=${red}
 B_PRESEL_FEEDBACK_COLOR=${green}
-
-#################################
-# PICOM
-#################################
-P_ACTIVE_OPACITY=1.0
-P_ANIMATIONS="@"
-P_BACKEND="glx"
-P_BLUR="true"
-P_BLUR_BACKGROUND=false
-P_BLUR_BACKGROUND_FIXED=false
-P_BLUR_BACKGROUND_FRAME=false
-P_BLUR_DEVIATION=false
-P_BLUR_METHOD="dual_kawase"
-P_BLUR_SIZE=12
-P_BLUR_STRENGTH=5
-P_CORNER_RADIUS=10
-P_DETECT_CLIENT_LEADER=true
-P_DETECT_CLIENT_OPACITY=true
-P_DETECT_ROUNDED_CORNERS=true
-P_DETECT_TRANSIENT=true
-P_FADE="true"
-P_FADE_DELTA=10
-P_FADE_IN_STEP=0.028
-P_FADE_OUT_STEP=0.03
-P_FADING=true
-P_FRAME_OPACITY=1.0
-P_INACTIVE_DIM=0.0
-P_INACTIVE_OPACITY=1.0
-P_INACTIVE_OP_OVERRIDE=false
-P_MARK_OVREDIR_FOCUSED=true
-P_MARK_WMWIN_FOCUSED=true
-P_ROUND_BORDERS=1
-P_SHADOWS="true"
-P_SHADOWS=false
-P_SHADOW_COLOR="#000000"
-P_SHADOW_OFFSET_X=-15
-P_SHADOW_OFFSET_Y=-15
-P_SHADOW_OPACITY=0.75
-P_SHADOW_RADIUS=12
-P_TERM_OPACITY="1.0"
-P_TRANSPARENT_CLIPPING=false
-P_UNREDIR_IF_POSSIBLE=false
-P_USE_DAMAGE=true
-P_USE_EWMH_ACTIVE_WIN=false
-P_VSYNC=true
-P_XRENDER_SYNC_FENCE=false
-SHADOW_C="#000000"
-
-#################################
-# DUNST
-#################################
-dunst_offset='(10, 10)'
-dunst_origin='bottom-left'
-dunst_transparency='0.1'
-dunst_corner_radius='6'
-dunst_font='Inconsolata Semi Condensed Bold 9'
-dunst_border='0'
-dunst_frame_color="$white"
-dunst_icon_theme="Gruvbox-Plus-Dark"
-
-# animations
-dunst_close_preset="fly-out"
-dunst_close_direction="down"
-dunst_open_preset="fly-in"
-dunst_open_direction="right"
 
 #################################
 # ROFI
 #################################
-rofi_font="JetBrainsMono NF Bold 12"
+rofi_font="JetBrainsMono N/F Bold 12"
 rofi_background="$bg"
 rofi_bg_alt="${bg}AA"
 rofi_background_alt="${bg}00"

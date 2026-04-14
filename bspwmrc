@@ -44,5 +44,7 @@ source "$SRC_DIR/misc.sh"
 source "$THEME_DIR/config.sh"
 source "$SRC_DIR/libinput.sh"
 source "$BIN_DIR/loader.sh"
+
 shopt -u globstar
-dunstify -a "Gwyn" "Gwyn" "Theme ${THEME_NAME} successfully loaded"
+
+dunstify -a "Gwyn" "Gwyn" "Theme ${THEME_NAME} loaded"

@@ -1,9 +1,13 @@
 run() {
-  killall "$1"
+  if pidof -q "$1"; then
+    killall -- "$1"
+    while pidof -q "$1"; do sleep 0.1; done
+  fi
   "$@" &
+  return 0
 }
 
-function run_polkit() {
+run_polkit() {
 
   # Launch polkit agent after closing other polkits
   agents=(
@@ -21,25 +25,25 @@ function run_polkit() {
   done
   killall "$1"
 
-  run "$1"
+  retrun "$(run "$1")"
 }
 
-function _log() {
+_log() {
   echo "[$(date +%H:%M:%S)][$1] $2" >>"$BSPWM_LOG"
 }
 
-function log() {
+log() {
   _log "INFO" "$1"
 }
 
-function log_debug() {
+log_debug() {
   _log "DEBUG" "$1"
 }
 
-function log_warn() {
+log_warn() {
   _log "WARN" "$1"
 }
 
-function log_err() {
+log_err() {
   _log "ERR" "$1"
 }

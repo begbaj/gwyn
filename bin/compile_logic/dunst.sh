@@ -1,5 +1,8 @@
-cat >$D_CONF <<EOF
+cat >$D_CONFIG <<EOF
 [global]
+    background = "#282c34CC"
+    frame_color = "#ffffff33"
+
     monitor = ${global_monitor}
     follow = ${global_follow}
     width = ${global_width}

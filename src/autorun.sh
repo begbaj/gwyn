@@ -22,7 +22,7 @@ run wmname LG3D
 # set screen locker
 run xss-lock slock
 xset s on
-xset 600
+xset s 600
 
 # run thunderbird-beta --headless
 

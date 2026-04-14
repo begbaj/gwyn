@@ -191,6 +191,18 @@ XF86Audio{RaiseVolume,LowerVolume,Mute}
 XF86Audio{Next,Prev,Play,Stop}
 	sh "$HOME"/.config/bspwm/bin/.old/MediaControl {--next,--previous,--toggle,--stop}
 
+super + KP_Left
+  xrandr --output DP-1 --rotate left | bspc wm -r
+
+super + KP_Up
+  xrandr --output DP-1 --rotate normal | bspc wm -r
+
+super + KP_Begin
+  ddcutil setvcp 60 0x0f
+
+super + KP_Down
+  ddcutil setvcp 60 0x11
+
 # Search Active windows
 # super + shift + w
 #   ActiveWindows
